@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:wsc="http://www.mulesoft.org/schema/mule/wsc" xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/wsc http://www.mulesoft.org/schema/mule/wsc/current/mule-wsc.xsd">
+	
+	<wsc:config name="Web_Service_Consumer_Config" doc:name="Web Service Consumer Config" doc:id="f83b0d23-de1d-4e65-bdf8-f9c508139b1b" >
+		<wsc:connection wsdlLocation="http://localhost:8081/AssignmentWSDLFile/AssignmentWSDLFileSOAP?wsdl" service="AssignmentWSDLFile" port="AssignmentWSDLFileSOAP" address="http://localhost:8081/AssignmentWSDLFile/AssignmentWSDLFileSOAP" />
+	</wsc:config>
+	<flow name="soap-prcFlow" doc:id="29efd2da-7584-4e97-a932-93fe18abb65c" >
+		<wsc:consume doc:id="37d6c6b8-8969-46c6-8e76-1bf8b2785552" config-ref="Web_Service_Consumer_Config" operation="getOperation"/>
+	</flow>
+</mule>
